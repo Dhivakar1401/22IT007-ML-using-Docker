@@ -1,0 +1,8 @@
+name: hello-world-dhivakar
+on: push
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print your name
+        run: echo "Hello World - dhivakar t"
