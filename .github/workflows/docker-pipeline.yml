@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: print your name
-        run: echo "Hello World - 22it054"
+        run: echo "Hello World - 22it007"
 
       - name: Checkout
         uses: actions/checkout@v4
@@ -16,3 +16,13 @@ jobs:
 
       - name: Docker Images
         run: docker images
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: Docker Push
+        run: docker push dhivakart271/ml-model-22it007
+    
