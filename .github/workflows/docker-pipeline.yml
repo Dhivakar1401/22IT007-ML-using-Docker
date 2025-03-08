@@ -1,0 +1,18 @@
+name: docker-pipeline-dhivakar
+on: push
+jobs:
+  my-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print your name
+        run: echo "Hello World - 22it054"
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+
+      - name: Docker Build
+        run: docker build -t dhivakart271/ml-model-22it007 .
+
+      - name: Docker Images
+        run: docker images
